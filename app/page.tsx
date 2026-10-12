@@ -6,37 +6,48 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  MoveUpRight,
   Sparkles,
 } from "lucide-react";
 const work = [
   {
-    name: "VizmaPro",
-    type: "Manufacturing operations",
-    desc: "Contributed to a platform for managing manufacturing operations.",
+    name: "Cedarline Roofing",
+    type: "Roofing contractor · Concept",
+    desc: "A service-first website concept with a clear path to request an estimate.",
+    previewTag: "Roofing & repairs",
+    headline: "A stronger roof starts here.",
+    cta: "Request an estimate",
   },
   {
-    name: "HiredRCI",
-    type: "Hiring platform",
-    desc: "Contributed to AI-powered resume and interview tools.",
-    url: "https://hiredrci.com/",
+    name: "Brightwell Dental",
+    type: "Dental practice · Concept",
+    desc: "A welcoming practice website concept that makes booking feel simple.",
+    previewTag: "Care for every smile",
+    headline: "Feel good about your smile.",
+    cta: "Book a visit",
   },
   {
-    name: "ProSafe",
-    type: "Safety training",
-    desc: "Contributed to training and scheduling experiences.",
-    url: "https://prosafetraining.ca/",
+    name: "Nest & Gleam",
+    type: "Home cleaning · Concept",
+    desc: "A local cleaning service concept centered on trust and quick quote requests.",
+    previewTag: "A cleaner home awaits",
+    headline: "Come home to clean.",
+    cta: "Get a quote",
   },
   {
-    name: "WEARTHAT",
-    type: "Commerce experience",
-    desc: "Contributed frontend styling to its commerce experience.",
-    url: "https://wearthat.me/",
+    name: "Westside Coffee House",
+    type: "Neighborhood café · Concept",
+    desc: "A warm café website concept highlighting the menu, hours, and location.",
+    previewTag: "Your neighborhood spot",
+    headline: "Good coffee. Better company.",
+    cta: "Explore the menu",
   },
   {
-    name: "Premier Sports",
-    type: "Sports platform",
-    desc: "Contributed to TV applications for the sports platform.",
+    name: "Clearcoat Auto Detail",
+    type: "Auto detailing · Concept",
+    desc: "A bold service website concept that makes packages and bookings easy to find.",
+    previewTag: "The details matter",
+    headline: "Bring back that new-car feeling.",
+    cta: "View services",
   },
 ];
 const services = [
@@ -171,51 +182,43 @@ export default function Home() {
       <section className="work section" id="work">
         <div className="shell">
           <header className="section-head work-head">
-            <p className="kicker">Selected work</p>
-            <h2>Experience shaped across real products and platforms.</h2>
+            <p className="kicker">Website concepts</p>
+            <h2>A better first impression for local businesses.</h2>
             <p>
-              Selected projects I’ve contributed to across product, commerce,
-              hiring, safety, and sport.
+              Sample directions for the kinds of websites I can create. These
+              are concepts, not commissioned client projects.
             </p>
           </header>
           <div className="work-grid">
-            {work.map((p, i) => {
-              const inner = (
-                <>
-                  <div className="project-top">
-                    <span>0{i + 1}</span>
-                    {p.url && <MoveUpRight size={22} />}
+            {work.map((p, i) => (
+              <article className="project" key={p.name}>
+                <div className="project-top">
+                  <span>0{i + 1}</span>
+                  <span>Sample concept</span>
+                </div>
+                <div className="project-art" aria-hidden="true">
+                  <div className="concept-preview">
+                    <div className="concept-preview-nav">
+                      <span>{p.name}</span>
+                      <span>MENU&nbsp; ☰</span>
+                    </div>
+                    <div className="concept-preview-body">
+                      <span className="concept-preview-kicker">{p.previewTag}</span>
+                      <strong>{p.headline}</strong>
+                      <span className="concept-preview-action">{p.cta} ↗</span>
+                    </div>
                   </div>
-                  <div className="project-art" aria-hidden="true">
-                    <span>{p.name[0]}</span>
-                  </div>
-                  <p>{p.type}</p>
-                  <h3>{p.name}</h3>
-                  <p className="project-desc">{p.desc}</p>
-                </>
-              );
-              return p.url ? (
-                <a
-                  className="project"
-                  href={p.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={p.name}
-                  aria-label={`Visit ${p.name}`}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <article className="project" key={p.name}>
-                  {inner}
-                </article>
-              );
-            })}
+                </div>
+                <p>{p.type}</p>
+                <h3>{p.name}</h3>
+                <p className="project-desc">{p.desc}</p>
+              </article>
+            ))}
             <div className="project-note">
               <Code2 size={30} />
               <p>
-                4+ years building with modern web technologies—chosen to fit the
-                project, never to complicate it.
+                Your business could be next. Let’s shape a site around your
+                services, customers, and goals.
               </p>
             </div>
           </div>

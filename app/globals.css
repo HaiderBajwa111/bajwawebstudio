@@ -362,13 +362,76 @@ a {
   display: grid;
   place-items: center;
   overflow: hidden;
+  min-height: 200px;
+  padding: 20px 7px;
 }
 
-.project-art span {
-  font: italic 200px/1 Georgia;
-  opacity: 0.24;
-  transform: rotate(-7deg);
-  user-select: none;
+.concept-preview {
+  width: min(100%, 310px);
+  height: 180px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 #16231d2b;
+  transform: rotate(-3deg);
+}
+
+.project:nth-child(even) .concept-preview {
+  transform: rotate(3deg);
+}
+
+.project:nth-child(5) .concept-preview {
+  width: min(100%, 440px);
+}
+
+.concept-preview-nav {
+  height: 35px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.concept-preview-nav span:last-child {
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.concept-preview-body {
+  height: calc(100% - 35px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 18px;
+}
+
+.concept-preview-kicker {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.concept-preview-body strong {
+  max-width: 25ch;
+  font: 500 24px/0.98 Georgia;
+  letter-spacing: -0.04em;
+}
+
+.concept-preview-action {
+  padding: 7px 10px;
+  border-radius: 99px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 9px;
+  font-weight: 800;
 }
 
 .project p {
