@@ -79,7 +79,7 @@ export default function Home() {
     <main>
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top">
-          <span className="brand-mark">B</span>
+          <img className="brand-mark" src="/favicon.svg" alt="" />
           <span>Bajwa Web Studio</span>
         </a>
         <div className="nav-links">
@@ -323,7 +323,7 @@ export default function Home() {
       </section>
       <footer className="footer shell">
         <a className="brand" href="#top">
-          <span className="brand-mark">B</span>
+          <img className="brand-mark" src="/favicon.svg" alt="" />
           <span>Bajwa Web Studio</span>
         </a>
         <p>Websites & web applications for growing businesses.</p>
